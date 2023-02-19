@@ -2,6 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
 const { connection } = require("./config/db");
+const { userRouter } = require("./routes/user.routes");
 //creating app
 const app = express();
 //Defining PORT
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 8080;
 // Middlewares
 app.use(express.json());
 app.use(cors());
+app.use("/user",userRouter);
 
 // Home route
 app.get("/", (req, res) => {
