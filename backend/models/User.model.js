@@ -45,10 +45,6 @@ const userSchema = new mongoose.Schema({
   },
   phone: { type: String },
   cell: { type: String },
-  id: {
-    name: { type: String, required: true },
-    value: { type: String, required: true },
-  },
   picture: {
     large: { type: String, required: true },
     medium: { type: String, required: true },
