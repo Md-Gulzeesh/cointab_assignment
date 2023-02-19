@@ -1,9 +1,13 @@
 .container{
     display: flex;
-    height: 100vh;
+    height: 50vh;
     justify-content: center;
     align-items: center;
     gap: 12px;
+}
+.homePage_heading{
+    text-align: center;
+    margin: 20px auto;
 }
 .btn{
     padding: 16px;
