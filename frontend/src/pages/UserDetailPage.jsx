@@ -48,7 +48,7 @@ const UserDetailPage = () => {
               <td className={styles.tableData} data-title="Avatar">
                 <img
                   className={styles.avatar_image}
-                  src={elem?.picture?.thumbnail}
+                  src={elem?.picture?.large}
                   alt={elem?.name?.first + " " + elem?.name?.last}
                 />
               </td>
