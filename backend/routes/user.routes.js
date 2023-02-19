@@ -1,9 +1,18 @@
 const express = require("express");
-const { addUsers, deleteUsers } = require("../controllers/user.controllers");
+const {
+  addUsers,
+  deleteUsers,
+  getUsers,
+} = require("../controllers/user.controllers");
 const userRouter = express.Router();
 
-userRouter.get("/", (req, res) => {
-  res.status(200).send("Get users");
+userRouter.get("/", async (req, res) => {
+  try {
+    let response =  await getUsers(req.query);
+    res.status(200).send(response);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 });
 userRouter.post("/add", async (req, res) => {
   try {
