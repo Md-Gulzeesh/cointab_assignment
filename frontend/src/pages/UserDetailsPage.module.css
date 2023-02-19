@@ -16,6 +16,18 @@
     text-align: left;
     padding: 8px;
 }
+.tableData:first-child{
+    text-align: center;
+}
+.tableData:nth-child(3)>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.tableData:nth-child(4){
+    text-transform: capitalize;
+}
 .tableRow:nth-child(even) {
     background-color: #f2f2f2;
 }
@@ -27,4 +39,8 @@
 .backIconDiv>a{
     text-decoration: none;
     color: black;
+}
+.avatar_image{
+    border-radius: 50%;
+    width: 100%;
 }
