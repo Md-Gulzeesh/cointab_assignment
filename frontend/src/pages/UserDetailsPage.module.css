@@ -1,0 +1,21 @@
+.user_details_heading{
+    text-align: center;
+    margin: 16px auto;
+}
+.customTable {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+.tableHeader{
+    background-color: var(--redColor);
+    color: var(--whiteColor);
+}
+.tableData,.tableHead {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+.tableRow:nth-child(even) {
+    background-color: #f2f2f2;
+}
