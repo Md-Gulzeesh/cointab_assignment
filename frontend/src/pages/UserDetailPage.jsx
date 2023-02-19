@@ -45,37 +45,37 @@ const UserDetailPage = () => {
         <tbody>
           {data.map((elem, index) => (
             <tr key={index} className={styles.tableRow}>
-              <td className={styles.tableData}>
+              <td className={styles.tableData} data-title="Avatar">
                 <img
                   className={styles.avatar_image}
                   src={elem?.picture?.thumbnail}
                   alt={elem?.name?.first + " " + elem?.name?.last}
                 />
               </td>
-              <td className={styles.tableData}>
+              <td className={styles.tableData} data-title="Name">
                 {elem?.name?.title +
                   " " +
                   elem?.name?.first +
                   " " +
                   elem?.name?.last}
               </td>
-              <td className={styles.tableData}>
+              <td className={styles.tableData} data-title="Email">
                 <div>
                   {elem?.email} <MdCopyAll style={{ fontSize: "16px" }} />
                 </div>
               </td>
-              <td className={styles.tableData}>{elem?.gender}</td>
-              <td className={styles.tableData}>
+              <td className={styles.tableData} data-title="Gender">{elem?.gender}</td>
+              <td className={styles.tableData} data-title="Address">
                 {elem?.location?.street?.number +
                   " " +
                   elem?.location?.street?.name}
               </td>
-              <td className={styles.tableData}>{elem?.location?.city}</td>
-              <td className={styles.tableData}>{elem?.location?.state}</td>
-              <td className={styles.tableData}>{elem?.location?.country}</td>
-              <td className={styles.tableData}>{elem?.phone}</td>
-              <td className={styles.tableData}>{elem?.dob?.age}</td>
-              <td className={styles.tableData}>{elem?.dob?.date}</td>
+              <td className={styles.tableData} data-title="City">{elem?.location?.city}</td>
+              <td className={styles.tableData} data-title="State">{elem?.location?.state}</td>
+              <td className={styles.tableData} data-title="Country">{elem?.location?.country}</td>
+              <td className={styles.tableData} data-title="Phone">{elem?.phone}</td>
+              <td className={styles.tableData} data-title="Age">{elem?.dob?.age}</td>
+              <td className={styles.tableData} data-title="Date of Birth">{elem?.dob?.date}</td>
             </tr>
           ))}
         </tbody>
