@@ -1,9 +1,16 @@
 import React from "react";
 import styles from "./UserDetailsPage.module.css";
+import { IoArrowBackOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 const UserDetailPage = () => {
   return (
     <div>
-      <h2 className={styles.user_details_heading}>User Details</h2>
+      <div className={styles.backIconDiv}>
+        <Link to={"/"}>
+          <IoArrowBackOutline style={{ fontSize: "32px" }} />
+        </Link>
+        <h2 className={styles.user_details_heading}>User Details</h2>
+      </div>
       <table className={styles.customTable}>
         <thead className={styles.tableHeader}>
           <tr className={styles.tableRow}>
