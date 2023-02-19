@@ -3,17 +3,25 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 .btn{
     padding: 16px;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
     user-select: none;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    box-shadow: var(--boxShadow) ;
     font-size: 16px;
+    background-color: var(--redColor);
+    color: var(--whiteColor);
+    transition: all ease-in-out 200ms;
 }
 .btn:hover{
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    box-shadow:var(--hoverBoxShadow);
+    transform: translateY(-4px);
+}
+.link{
+    text-decoration: none;
+    color: var(--whiteColor);
 }
