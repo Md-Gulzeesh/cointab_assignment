@@ -43,7 +43,13 @@ const UserDetailPage = () => {
           <Loader />
         </div>
       ) : isError ? (
-        <div className={styles.loaderDiv} color={"red"}>Something went wrong! see console for more information</div>
+        <div className={styles.loaderDiv} color={"red"}>
+          Something went wrong! see console for more information
+        </div>
+      ) : data.length === 0 ? (
+        <div className={styles.loaderDiv} color={"red"}>
+          There is no data please add new records
+        </div>
       ) : (
         <table className={styles.customTable}>
           <thead className={styles.tableHeader}>
