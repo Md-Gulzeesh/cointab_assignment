@@ -4,10 +4,12 @@ import { IoArrowBackOutline } from "react-icons/io5";
 import {MdCopyAll} from "react-icons/md"
 import { Link } from "react-router-dom";
 import Pagination from "../components/Pagination";
+import { getUsers } from "../redux/user.actions";
 const UserDetailPage = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     getData();
+    getUsers("","","","","","");
   }, []);
   const getData = async () => {
     try {
