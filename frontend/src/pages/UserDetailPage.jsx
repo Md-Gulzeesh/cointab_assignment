@@ -12,13 +12,17 @@ const UserDetailPage = () => {
   const [totalPages, setTotalPages] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  // Getting data on page load and whenever variables in the dependency array change
   useEffect(() => {
     getData();
   }, []);
+
+  // Getting data from backend
   const getData = async () => {
     setIsLoading(true);
     try {
-      let response = await fetch(BACKEND_API_URL+"user");
+      let response = await fetch(BACKEND_API_URL + "user");
       response = await response.json();
       setData(response.data);
       setTotalPages(response.totalPages);
