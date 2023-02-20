@@ -46,17 +46,16 @@ const HomePage = () => {
         });
         response = await response.json();
         console.log(response);
-        if (response.acknowledged && response.deletedCount>0) {
+        if (response.acknowledged && response.deletedCount > 0) {
           alert("Users deleted successfully");
-        }else{
+        } else {
           alert("The database is empty; please add new records!");
         }
       } catch (error) {
-        alert("Something went wrong! see console for more information.")
+        alert("Something went wrong! see console for more information.");
         console.log(error);
       }
     }
-      
   };
   return (
     <>
@@ -65,7 +64,9 @@ const HomePage = () => {
         <button className={styles.btn} onClick={handleFetch}>
           Fetch Users
         </button>
-        <button className={styles.btn} onClick={handleDelete}>Delete Users</button>
+        <button className={styles.btn} onClick={handleDelete}>
+          Delete Users
+        </button>
         <Link className={styles.link} to={"/users"}>
           <button className={styles.btn}>User Details</button>
         </Link>

@@ -1,12 +1,12 @@
 import React from "react";
 import Countries from "../data/countryData.json";
 import styles from "./Filter.module.css";
-const Filter = ({ filters,handleChange,handleReset }) => {
+const Filter = ({ filters, handleChange, handleReset }) => {
   return (
     <div className={styles.filterDiv}>
       <input
-      value={filters.name}
-      name="name"
+        value={filters.name}
+        name="name"
         onChange={handleChange}
         className={styles.inputTag}
         type="text"
@@ -56,7 +56,9 @@ const Filter = ({ filters,handleChange,handleReset }) => {
           </option>
         ))}
       </select>
-      <button onClick={handleReset} className={styles.filterResetBtn}>Reset</button>
+      <button onClick={handleReset} className={styles.filterResetBtn}>
+        Reset
+      </button>
     </div>
   );
 };

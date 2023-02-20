@@ -1,17 +1,20 @@
-.filterDiv{
+.filterDiv {
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
     margin: 10px;
     padding: 0 10px;
 }
-.selectTag,.inputTag{
+
+.selectTag,
+.inputTag {
     border: 1px solid gainsboro;
     padding: 8px;
-    border-radius:8px;
+    border-radius: 8px;
     outline-color: #3CCF4E;
 }
-.filterResetBtn{
+
+.filterResetBtn {
     border: none;
     border-radius: 10px;
     padding: 15px;

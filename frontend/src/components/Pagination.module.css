@@ -1,4 +1,4 @@
-.paginationDiv{
+.paginationDiv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,6 +6,7 @@
     gap: 5px;
     margin: 20px;
 }
+
 .paginationBtn {
     border: none;
     padding: 10px 30px;
@@ -19,6 +20,7 @@
 .paginationBtn:hover {
     background-color: #393d3d;
 }
+
 :disabled {
     cursor: not-allowed;
     background-color: gainsboro;

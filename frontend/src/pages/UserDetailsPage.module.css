@@ -58,7 +58,7 @@
     width: 100%;
 }
 
-.loaderDiv{
+.loaderDiv {
     display: flex;
     justify-content: center;
     align-items: center;
