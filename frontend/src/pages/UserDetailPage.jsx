@@ -121,7 +121,7 @@ const UserDetailPage = () => {
         </table>
       )}
 
-      <Pagination current={page} totalPages={totalPages} />
+      <Pagination current={page} totalPages={totalPages} setPage={setPage} />
     </div>
   );
 };

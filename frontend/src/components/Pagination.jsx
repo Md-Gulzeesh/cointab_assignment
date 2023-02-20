@@ -17,7 +17,7 @@ const Pagination = ({current,totalPages,setPage}) => {
       <button
         className={styles.paginationBtn}
         disabled={current <= 1}
-        onClick={() => setPage(page - 1)}
+        onClick={() => setPage(current - 1)}
       >
         Prev
       </button>
@@ -25,7 +25,7 @@ const Pagination = ({current,totalPages,setPage}) => {
       <button
         className={styles.paginationBtn}
         disabled={current === totalPages}
-        onClick={() => setPage(page - 1)}
+        onClick={() => setPage(current - 1)}
       >
         Next
       </button>
