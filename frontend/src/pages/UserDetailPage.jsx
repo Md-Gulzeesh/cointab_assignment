@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./UserDetailsPage.module.css";
 import { IoArrowBackOutline } from "react-icons/io5";
-import {MdCopyAll} from "react-icons/md"
+import { MdCopyAll } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Pagination from "../components/Pagination";
 import { BACKEND_API_URL } from "../api/api";
@@ -13,17 +13,52 @@ const UserDetailPage = () => {
   const [totalPages, setTotalPages] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-
+  const [filters, setFilters] = useState({
+    name: "",
+    age: "",
+    gender: "",
+    country: "",
+    sort: "",
+    page: page,
+  });
+  const handlePage = ()=>{
+    setPage(page+1);
+    setFilters({...filters,page:page});
+  }
+  const handleChange = (e) => {
+     const { name, value } = e.target;
+     setFilters({
+       ...filters,
+       [name]: value,
+     });
+  };
+  const handleReset = () => {
+    setFilters({
+      name: "",
+      age: "",
+      gender: "",
+      country: "",
+      sort: "",
+      page: 1,
+    });
+  };
   // Getting data on page load and whenever variables in the dependency array change
   useEffect(() => {
-    getData();
-  }, []);
+    getData(filters);
+  }, [filters]);
 
   // Getting data from backend
-  const getData = async () => {
+  const getData = async (filters) => {
     setIsLoading(true);
     try {
-      let response = await fetch(BACKEND_API_URL + "user");
+      let URL = BACKEND_API_URL+"user"+"?";
+      for(let key in filters){
+        if(filters[key]){
+          URL += key+"="+filters[key]+"&";
+        }
+      }
+      console.log(URL);
+      let response = await fetch(URL);
       response = await response.json();
       setData(response.data);
       setTotalPages(response.totalPages);
@@ -43,7 +78,11 @@ const UserDetailPage = () => {
         </Link>
         <h2 className={styles.user_details_heading}>User Details</h2>
       </div>
-      <Filter/>
+      <Filter
+        filters={filters}
+        handleChange={handleChange}
+        handleReset={handleReset}
+      />
       {isLoading ? (
         <div className={styles.loaderDiv}>
           <Loader />
@@ -127,7 +166,7 @@ const UserDetailPage = () => {
         </table>
       )}
 
-      <Pagination current={page} totalPages={totalPages} setPage={setPage} />
+      <Pagination current={page} totalPages={totalPages} setPage={handlePage} />
     </div>
   );
 };
