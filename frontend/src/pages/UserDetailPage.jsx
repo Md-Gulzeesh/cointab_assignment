@@ -29,6 +29,7 @@ const UserDetailPage = () => {
     setFilters({
       ...filters,
       [name]: value,
+      page:1,
     });
   };
   const handleReset = () => {
