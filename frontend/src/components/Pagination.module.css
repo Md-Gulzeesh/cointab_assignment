@@ -17,3 +17,7 @@
 .paginationBtn:hover {
     background-color: #393d3d;
 }
+:disabled {
+    cursor: not-allowed;
+    background-color: gainsboro;
+}

@@ -12,8 +12,25 @@ const Pagination = ({current,totalPages,setPage}) => {
       </button>
     ));
   return (
-    <div className={styles.paginationDiv}>{pages}</div>
-  )
+    <div className={styles.paginationDiv}>
+      {" "}
+      <button
+        className={styles.paginationBtn}
+        disabled={current <= 1}
+        onClick={() => setPage(page - 1)}
+      >
+        Prev
+      </button>
+      {pages}
+      <button
+        className={styles.paginationBtn}
+        disabled={current === totalPages}
+        onClick={() => setPage(page - 1)}
+      >
+        Next
+      </button>
+    </div>
+  );
 }
 
 export default Pagination

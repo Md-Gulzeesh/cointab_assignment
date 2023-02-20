@@ -44,7 +44,7 @@ const UserDetailPage = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((elem, index) => (
+          {data?.map((elem, index) => (
             <tr key={index} className={styles.tableRow}>
               <td className={styles.tableData} data-title="Avatar">
                 <img
@@ -81,7 +81,7 @@ const UserDetailPage = () => {
           ))}
         </tbody>
       </table>
-      <Pagination/>
+      <Pagination current={1}/>
     </div>
   );
 };
