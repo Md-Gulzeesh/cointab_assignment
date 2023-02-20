@@ -21,16 +21,15 @@ const UserDetailPage = () => {
     sort: "",
     page: page,
   });
-  const handlePage = ()=>{
-    setPage(page+1);
-    setFilters({...filters,page:page});
-  }
+  const handlePage = () => {
+    setFilters({ ...filters, page: page });
+  };
   const handleChange = (e) => {
-     const { name, value } = e.target;
-     setFilters({
-       ...filters,
-       [name]: value,
-     });
+    const { name, value } = e.target;
+    setFilters({
+      ...filters,
+      [name]: value,
+    });
   };
   const handleReset = () => {
     setFilters({
@@ -39,22 +38,25 @@ const UserDetailPage = () => {
       gender: "",
       country: "",
       sort: "",
-      page: 1,
     });
   };
   // Getting data on page load and whenever variables in the dependency array change
   useEffect(() => {
     getData(filters);
   }, [filters]);
+  // Handling page change
+  useEffect(() => {
+    handlePage();
+  }, [page]);
 
   // Getting data from backend
   const getData = async (filters) => {
     setIsLoading(true);
     try {
-      let URL = BACKEND_API_URL+"user"+"?";
-      for(let key in filters){
-        if(filters[key]){
-          URL += key+"="+filters[key]+"&";
+      let URL = BACKEND_API_URL + "user" + "?";
+      for (let key in filters) {
+        if (filters[key]) {
+          URL += key + "=" + filters[key] + "&";
         }
       }
       console.log(URL);
@@ -166,7 +168,7 @@ const UserDetailPage = () => {
         </table>
       )}
 
-      <Pagination current={page} totalPages={totalPages} setPage={handlePage} />
+      <Pagination current={page} totalPages={totalPages} setPage={setPage} />
     </div>
   );
 };
