@@ -5,7 +5,7 @@ import {MdCopyAll} from "react-icons/md"
 import { Link } from "react-router-dom";
 import Pagination from "../components/Pagination";
 import { BACKEND_API_URL } from "../api/api";
-import Loader from "../components/loader";
+import Loader from "../components/Loader";
 const UserDetailPage = () => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
