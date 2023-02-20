@@ -169,7 +169,7 @@ const UserDetailPage = () => {
         </table>
       )}
 
-      <Pagination current={page} totalPages={totalPages} setPage={setPage} />
+      <Pagination current={page} totalPages={totalPages} setPage={setPage} data={data} />
     </div>
   );
 };

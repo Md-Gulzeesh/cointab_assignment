@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Pagination.module.css";
-const Pagination = ({ current, totalPages, setPage }) => {
+const Pagination = ({ current, totalPages, setPage, data }) => {
   let pages = new Array(totalPages).fill(0).map((el, i) => (
     <button
       className={styles.paginationBtn}
@@ -24,7 +24,7 @@ const Pagination = ({ current, totalPages, setPage }) => {
       {pages}
       <button
         className={styles.paginationBtn}
-        disabled={current === totalPages}
+        disabled={current === totalPages || data.length === 0}
         onClick={() => setPage(current + 1)}
       >
         Next
