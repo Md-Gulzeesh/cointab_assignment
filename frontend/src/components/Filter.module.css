@@ -1,0 +1,13 @@
+.filterDiv{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 0 10px;
+}
+.selectTag,.inputTag{
+    border: 1px solid gainsboro;
+    padding: 8px;
+    border-radius:8px;
+    outline-color: #3CCF4E;
+}

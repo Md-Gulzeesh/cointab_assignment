@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Pagination from "../components/Pagination";
 import { BACKEND_API_URL } from "../api/api";
 import Loader from "../components/Loader";
+import Filter from "../components/Filter";
 const UserDetailPage = () => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
@@ -42,6 +43,7 @@ const UserDetailPage = () => {
         </Link>
         <h2 className={styles.user_details_heading}>User Details</h2>
       </div>
+      <Filter/>
       {isLoading ? (
         <div className={styles.loaderDiv}>
           <Loader />
