@@ -3,6 +3,7 @@ import styles from "./UserDetailsPage.module.css";
 import { IoArrowBackOutline } from "react-icons/io5";
 import {MdCopyAll} from "react-icons/md"
 import { Link } from "react-router-dom";
+import Pagination from "../components/Pagination";
 const UserDetailPage = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -80,6 +81,7 @@ const UserDetailPage = () => {
           ))}
         </tbody>
       </table>
+      <Pagination/>
     </div>
   );
 };

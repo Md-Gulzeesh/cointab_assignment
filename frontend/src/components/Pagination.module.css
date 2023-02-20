@@ -1,0 +1,19 @@
+.paginationDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.paginationBtn {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: #2c3333;
+    box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
+}
+
+.paginationBtn:hover {
+    background-color: #393d3d;
+}
